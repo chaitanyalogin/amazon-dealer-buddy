@@ -1,4 +1,4 @@
-// ========= load Q&A =========
+// ===== Load Q&A from qa.json =====
 async function getJSON(url){
   const r = await fetch(url, {cache:"no-store"});
   if(!r.ok) throw new Error(`Failed to load ${url}`);
@@ -14,15 +14,15 @@ let QA = [];
   }catch(e){
     console.error(e);
     document.getElementById("answer").innerHTML =
-      `<div class="text">Couldn't load data. Check <code>qa.json</code>.</div>`;
+      `<div class="text">Couldn't load <code>qa.json</code>. Check the file path.</div>`;
   }
 })();
 
-// ========= DOM =========
+// ===== DOM =====
 const actionsEl = document.getElementById("actions");
 const answerEl  = document.getElementById("answer");
 
-// ========= helpers =========
+// ===== helpers =====
 function typingNode(){
   const box = document.createElement("div");
   box.className = "typing";
@@ -40,9 +40,9 @@ function showAnswer(q, a){
   answerEl.appendChild(body);
 }
 
-// ========= mount UI =========
+// ===== mount UI =====
 function boot(){
-  // build buttons from qa.json (order preserved)
+  // build buttons
   actionsEl.innerHTML = "";
   QA.forEach((item, i) => {
     const b = document.createElement("button");
@@ -52,21 +52,18 @@ function boot(){
     actionsEl.appendChild(b);
   });
 
-  // click handler with "thinking…" animation
+  // click -> typing -> answer
   actionsEl.addEventListener("click", (e)=>{
     const btn = e.target.closest(".action");
     if(!btn) return;
     const idx = +btn.dataset.idx;
     const {q, a} = QA[idx];
 
-    // typing animation for ~500ms
     answerEl.innerHTML = "";
     answerEl.appendChild(typingNode());
     setTimeout(()=>{ showAnswer(q, a); }, 550);
   });
 
-  // auto-select first question
-  if(QA.length){
-    showAnswer(QA[0].q, QA[0].a);
-  }
+  // initial selection
+  if(QA.length){ showAnswer(QA[0].q, QA[0].a); }
 }
