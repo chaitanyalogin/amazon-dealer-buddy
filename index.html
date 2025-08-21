@@ -1,106 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazon Dealer Buddy</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Amazon Dealer Helpdesk</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .container {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    /* Quick Actions */
-    .questions {
-      flex: 1;
-      min-width: 250px;
-    }
-
-    .questions h2 {
-      margin-bottom: 10px;
-    }
-
-    .questions button {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      background-color: #232f3e;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    .questions button:hover {
-      background-color: #37475a;
-    }
-
-    /* Answer Box */
-    .answer-box {
-      flex: 2;
-      min-width: 300px;
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 15px;
-      min-height: 250px; /* ✅ Keeps box fixed height */
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      overflow-y: auto;
-    }
-
-    .answer-box h2 {
-      margin-top: 0;
-    }
-
-    .answer {
-      white-space: pre-wrap;
+    /* Fix for mobile view */
+    .answer-body {
+      overflow-y: auto;   /* scroll if long */
+      word-wrap: break-word; /* break long words */
+      padding-bottom: 1rem; /* space so last line is visible */
+      max-height: 80vh; /* keep it within screen */
     }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <!-- Left: Quick Actions -->
-    <div class="questions">
-      <h2>Quick Actions</h2>
-      <button onclick="showAnswer(1)">What is the return policy?</button>
-      <button onclick="showAnswer(2)">How to track my order?</button>
-      <button onclick="showAnswer(3)">How to contact support?</button>
-      <button onclick="showAnswer(4)">Payment issues</button>
-    </div>
-
-    <!-- Right: Answer Box -->
-    <div class="answer-box">
-      <div class="answer" id="answerText">
-        Select a question from the left to see the answer here.
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand">
+      <img class="logo" src="amazon-logo.png" alt="Amazon logo" />
+      <div class="titles">
+        <h1>Amazon Dealer Helpdesk</h1>
+        <p>Quick answers from your playbook</p>
       </div>
     </div>
-  </div>
+  </header>
 
-  <script>
-    const answers = {
-      1: "Amazon’s return policy allows you to return most items within 30 days of delivery. Ensure the product is in original condition with all tags and packaging.",
-      2: "To track your order, go to 'Your Orders' in your Amazon account, select the order, and click on 'Track Package'.",
-      3: "You can contact Amazon support via the Help section in your account, or use the 24/7 chat and call-back service.",
-      4: "For payment issues, check your card details, available balance, and retry. If the problem persists, contact your bank or Amazon support."
-    };
+  <!-- App layout -->
+  <main class="app">
+    <!-- Left: Quick actions (scrolls inside) -->
+    <aside class="panel">
+      <h3>Quick actions</h3>
+      <div id="qaList" class="qa-list"></div>
+    </aside>
 
-    function showAnswer(id) {
-      document.getElementById("answerText").innerText = answers[id] || "Answer not available yet.";
-    }
-  </script>
+    <!-- Right: Answer (scrolls inside) -->
+    <section class="panel answer">
+      <h2 id="answerTitle">Select a question to view the answer.</h2>
+      <div id="answerBody" class="answer-body"></div>
+    </section>
+  </main>
 
+  <script src="app.js"></script>
 </body>
 </html>
