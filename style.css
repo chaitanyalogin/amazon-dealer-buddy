@@ -1,92 +1,116 @@
-/* ============ base (white theme) ============ */
-:root{
+:root {
   --bg:#ffffff;
   --ink:#111418;
   --muted:#5f6b7a;
   --border:#e5e7eb;
-  --pill:#ff9900;            /* Amazon orange */
-  --pill-hi:#f59e0b;         /* hover shade */
+  --pill:#ff9900;
+  --pill-hi:#f59e0b;
   --card:#ffffff;
   --shadow:0 10px 25px rgba(0,0,0,.06);
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0; background:var(--bg); color:var(--ink);
+* { box-sizing:border-box }
+html,body { height:100% }
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
   font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans";
-  /* page never scrolls; inner regions handle it */
-  min-height:100svh; display:flex; flex-direction:column; overflow:hidden;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
 }
 
-/* ============ topbar ============ */
-.topbar{
+/* Topbar */
+.topbar {
   flex:0 0 auto;
-  display:flex; align-items:center; gap:1rem;
-  padding:.8rem 1rem; border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:.8rem 1rem;
+  border-bottom:1px solid var(--border);
   background:#fff;
 }
-.brand{display:flex; align-items:center; gap:.8rem; min-width:0}
-.logo{height:26px; width:auto; object-fit:contain}
-.titles h1{margin:0; font-size:1.35rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-.titles p{margin:0; color:var(--muted); font-size:.9rem}
+.brand { display:flex; align-items:center; gap:.8rem; min-width:0 }
+.logo { height:26px; width:auto; object-fit:contain }
+.titles h1 { margin:0; font-size:1.35rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+.titles p { margin:0; color:var(--muted); font-size:.9rem }
 
-/* ============ app layout (fills leftover height) ============ */
-.app{
+/* Layout */
+.app {
   flex:1 1 auto;
-  display:grid; grid-template-columns:360px 1fr; gap:1rem;
-  padding:1rem; max-width:1200px; margin:0 auto;
-  height:100%;   /* so inner panels can size to full height */
+  display:grid;
+  grid-template-columns:360px 1fr;
+  gap:1rem;
+  padding:1rem;
+  max-width:1200px;
+  margin:0 auto;
+  height:100%;
 }
-.panel{
-  background:var(--card); border:1px solid var(--border); border-radius:16px;
-  padding:1rem; box-shadow:var(--shadow);
-  display:flex; flex-direction:column; min-height:0; /* allow inner overflow */
+.panel {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:1rem;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  min-height:0;
 }
-.panel h3, .panel h2{margin:.2rem 0 1rem 0}
+.panel h3, .panel h2 { margin:.2rem 0 1rem 0 }
 
-/* Quick actions list (ONLY this scrolls on both desktop & mobile) */
-.qa-list{
-  display:flex; flex-direction:column; gap:.7rem;
-  overflow:auto; /* inner scroll */
-  padding-right:.25rem; /* room for scrollbar */
+/* Quick actions list */
+.qa-list {
+  display:flex;
+  flex-direction:column;
+  gap:.7rem;
+  overflow:auto;
+  padding-right:.25rem;
 }
-
-/* Orange pills */
-.qa-btn{
-  appearance:none; border:0; cursor:pointer;
+.qa-btn {
+  appearance:none;
+  border:0;
+  cursor:pointer;
   background:linear-gradient(180deg,var(--pill),#ea8a00);
-  color:#fff; font-weight:700; text-align:left;
-  padding:.9rem 1rem; border-radius:999px; box-shadow:0 4px 12px rgba(255,153,0,.25);
+  color:#fff;
+  font-weight:700;
+  text-align:left;
+  padding:.9rem 1rem;
+  border-radius:999px;
+  box-shadow:0 4px 12px rgba(255,153,0,.25);
 }
-.qa-btn:hover{ background:linear-gradient(180deg,var(--pill-hi),#e28100) }
-.qa-btn.active{ outline:3px solid rgba(255,153,0,.35) }
+.qa-btn:hover { background:linear-gradient(180deg,var(--pill-hi),#e28100) }
+.qa-btn.active { outline:3px solid rgba(255,153,0,.35) }
 
-/* Answer area (stays visible; scrolls internally if long) */
-.answer{ }
-.answer-body{
-  flex:1 1 auto; overflow:auto; border-radius:12px;
-  background:#fff; color:var(--ink); border:1px solid var(--border);
-  padding:1rem; white-space:pre-wrap; line-height:1.55;
-}
-
-/* typing dots */
-.dots{display:inline-flex; gap:.25rem; align-items:center}
-.dot{width:.4rem; height:.4rem; background:#999; border-radius:50%; opacity:.3; animation:blink 1.2s infinite}
-.dot:nth-child(2){animation-delay:.15s}
-.dot:nth-child(3){animation-delay:.3s}
-@keyframes blink{0%,60%,100%{opacity:.3}30%{opacity:1}}
-
-/* ======= mobile layout: two rows, both internal-scroll, no page scroll ======= */
-@media (max-width:720px){
-  .app{ grid-template-columns:1fr; grid-template-rows:48% 52%; }
-  .titles h1{font-size:1.12rem}
-  .titles p{font-size:.8rem}
-  .logo{height:22px}
+/* Answer area */
+.answer-body {
+  flex:1 1 auto;
+  overflow:auto;
+  border-radius:12px;
+  background:#fff;
+  color:var(--ink);
+  border:1px solid var(--border);
+  padding:1rem;
+  white-space:pre-wrap;
+  line-height:1.55;
 }
 
-/* nice, subtle scrollbars (where supported) */
-.qa-list::-webkit-scrollbar,
-.answer-body::-webkit-scrollbar{width:10px}
-.qa-list::-webkit-scrollbar-thumb,
-.answer-body::-webkit-scrollbar-thumb{background:#d8dbe0; border-radius:8px}
+/* Typing dots */
+.dots { display:inline-flex; gap:.25rem; align-items:center }
+.dot {
+  width:.4rem; height:.4rem;
+  background:#999; border-radius:50%;
+  opacity:.3; animation:blink 1.2s infinite;
+}
+.dot:nth-child(2){ animation-delay:.15s }
+.dot:nth-child(3){ animation-delay:.3s }
+@keyframes blink { 0%,60%,100%{opacity:.3}30%{opacity:1} }
+
+/* Mobile layout */
+@media (max-width:720px) {
+  .app { grid-template-columns:1fr; grid-template-rows:48% 52%; }
+  .titles h1 { font-size:1.12rem }
+  .titles p { font-size:.8rem }
+  .logo { height:22px }
+}
