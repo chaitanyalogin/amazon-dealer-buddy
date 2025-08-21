@@ -1,69 +1,67 @@
-// ===== Load Q&A from qa.json =====
-async function getJSON(url){
-  const r = await fetch(url, {cache:"no-store"});
-  if(!r.ok) throw new Error(`Failed to load ${url}`);
-  return r.json();
-}
-const urls = window.DATA_URLS || {};
-let QA = [];
+// Load FAQs from qa.json and render the UI.
+// The page never scrolls; only #qaList and .answer-body scroll.
 
-(async () => {
-  try{
-    QA = await getJSON(urls.qa);
-    boot();
-  }catch(e){
+async function loadFAQs() {
+  try {
+    const r = await fetch('qa.json', { cache: 'no-store' });
+    if (!r.ok) throw new Error('qa.json missing');
+    const j = await r.json();
+    return Array.isArray(j.faqs) ? j.faqs : [];
+  } catch (e) {
     console.error(e);
-    document.getElementById("answer").innerHTML =
-      `<div class="text">Couldn't load <code>qa.json</code>. Check the file path.</div>`;
+    // Fallback so UI still works if qa.json has an issue.
+    return [
+      { q: "Payment policy & terms", a: "—" },
+      { q: "How to check notifications?", a: "—" }
+    ];
   }
-})();
-
-// ===== DOM =====
-const actionsEl = document.getElementById("actions");
-const answerEl  = document.getElementById("answer");
-
-// ===== helpers =====
-function typingNode(){
-  const box = document.createElement("div");
-  box.className = "typing";
-  box.innerHTML = `<span class="dot"></span><span class="dot"></span><span class="dot"></span>`;
-  return box;
-}
-function showAnswer(q, a){
-  answerEl.innerHTML = "";
-  const title = document.createElement("h4");
-  title.textContent = q;
-  const body  = document.createElement("div");
-  body.className = "text";
-  body.textContent = a && a.trim() ? a : "—";
-  answerEl.appendChild(title);
-  answerEl.appendChild(body);
 }
 
-// ===== mount UI =====
-function boot(){
-  // build buttons
-  actionsEl.innerHTML = "";
-  QA.forEach((item, i) => {
-    const b = document.createElement("button");
-    b.className = "action";
-    b.textContent = item.q;
-    b.dataset.idx = i;
-    actionsEl.appendChild(b);
+const listEl   = document.getElementById('qaList');
+const titleEl  = document.getElementById('answerTitle');
+const bodyEl   = document.getElementById('answerBody');
+
+function typingDots(){
+  const wrap = document.createElement('span');
+  wrap.className = 'dots';
+  wrap.innerHTML = '<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
+  return wrap;
+}
+
+function showAnswer(item){
+  // set heading
+  titleEl.textContent = item.q;
+
+  // fake a tiny "thinking" pause for delight
+  bodyEl.innerHTML = '';
+  bodyEl.appendChild(typingDots());
+
+  setTimeout(()=>{
+    bodyEl.textContent = item.a || '—';
+    bodyEl.scrollTop = 0; // keep text start in view
+  }, 350);
+}
+
+function renderList(faqs){
+  listEl.innerHTML = '';
+  faqs.forEach((item, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'qa-btn';
+    btn.textContent = item.q;
+    btn.addEventListener('click', () => {
+      // active style
+      [...listEl.querySelectorAll('.qa-btn.active')].forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      showAnswer(item);
+    });
+    listEl.appendChild(btn);
+
+    // auto-open first on load
+    if(idx===0){
+      btn.classList.add('active');
+      showAnswer(item);
+    }
   });
-
-  // click -> typing -> answer
-  actionsEl.addEventListener("click", (e)=>{
-    const btn = e.target.closest(".action");
-    if(!btn) return;
-    const idx = +btn.dataset.idx;
-    const {q, a} = QA[idx];
-
-    answerEl.innerHTML = "";
-    answerEl.appendChild(typingNode());
-    setTimeout(()=>{ showAnswer(q, a); }, 550);
-  });
-
-  // initial selection
-  if(QA.length){ showAnswer(QA[0].q, QA[0].a); }
 }
+
+loadFAQs().then(renderList);
