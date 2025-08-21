@@ -2,67 +2,59 @@
   "faqs": [
     {
       "q": "How to get registered on Amazon?",
-      "a": "Go to sellercentral.amazon.in → 'Sign up'. Keep PAN, GSTIN, bank acct, phone/email, pickup address, and brand docs ready. Complete business details, tax info, deposit method, and verify OTP. After approval, add products and shipping settings. Or Use this link and get registered – registration link"
+      "a": "Please register yourself by clicking <a href='https://sellercentral.amazon.in'>here</a> → 'Sign up'. Keep PAN, GSTIN, bank acct, phone/email, pickup address, and brand docs ready. Complete business details, tax info, deposit method, and verify OTP. After approval, add products and shipping settings."
     },
     {
       "q": "How to raise seller support case?",
-      "a": "Seller Central → Help (top right) → 'Get support' → Selling on Amazon → pick topic → 'Contact us'. Choose email/chat/call, describe the issue, attach screenshots, submit. Track under 'Case log'."
+      "a": "Seller Support Case: Login to your <a href='https://sellercentral.amazon.in'>Seller Central Account</a> → check for “Help” (top right) → 'Get support' → Selling on Amazon → pick topic → 'Contact us'. Choose email/chat/call, describe the issue, attach screenshots, submit. Track under 'Case log'."
     },
     {
       "q": "How to login?",
-      "a": "Visit sellercentral.amazon.in → Sign in with your registered email/phone and password. If SSO/2FA enabled, enter OTP. Trouble? Use 'Forgot password' and ensure the correct marketplace (IN)."
+      "a": "Login: Visit <a href='https://sellercentral.amazon.in'>sellercentral.amazon.in</a> → Sign in with your registered email/phone and password. If 2 Step verification is enabled, keep your phone handy for OTP. Enter OTP & Login. Trouble? Use 'Forgot password' and ensure the correct marketplace (IN)."
     },
     {
       "q": "How to update inventory & Pricing?",
-      "a": "Inventory → Manage All Inventory → search SKU → 'Edit' → 'Offer' tab. Update 'Your price' and 'Quantity' then Save. For bulk: Inventory → Add Products via Upload → Price/Inventory file → upload, or use API – integration for getting inventory and pricing updates automatically."
+      "a": "1. Inventory → Manage All Inventory → search SKU → 'Edit' → 'Offer' tab. Update 'Your price' and 'Quantity' then Save. \n2. For bulk: Inventory → Add Products via Upload → Price/Inventory file → upload, or use API – integration for getting inventory and pricing updates automatically."
     },
     {
       "q": "How to check orders?",
-      "a": "Orders → Manage Orders → 'Pending/Unshipped/Cancelled'. Click an order ID to view details, print invoice/packing slip, and confirm dispatch."
-    },
-    {
-      "q": "How to deliver vehicle to customer?",
-      "a": ""
+      "a": "Login into your <a href='https://sellercentral.amazon.in'>Seller Central account</a> → Menu (Top Left) → Orders → Manage Orders → 'Pending/Unshipped/Cancelled'. Click an order ID to view details, contact customer and share KYC/Insurance & RTO docs. After collecting docs and RTO/Insurance charges, click Self Deliver → Print invoice/packing slip."
     },
     {
       "q": "Which app need to be downloaded for scanning?",
-      "a": ""
+      "a": "For Android: <a href='https://play.google.com/store'>Amazon Track App</a>. \nFor iPhone: <a href='https://apps.apple.com/'>Amazon Track App</a>. \n\nWhy important? \n• Provides tracking info to customers → better feedback. \n• Enables sellers to maintain delivery performance for Local Shops & Prime. \n\nPre-requisites:\n• Seller account on Seller Central\n• Delivery agent with Android ≥7.0 and IN phone number\n• Opted into Self-Delivery workflow\n• Configured 'Ships-from Location' in Buy Shipping preferences → Settings > Account Info > Buy Shipping Preferences.\n\nHow to update deliveries:\n1. Out for Delivery scan\n2. Delivered / Attempt / Rejected scan (before 10PM same day)."
+    },
+    {
+      "q": "How to deliver vehicle to customer?",
+      "a": "Login into Seller Central → Orders → Click Order ID → Collect KYC/RTO docs and charges for RTO/Insurance → Click Self Delivery → Enter dimensions → Print Packaging slip → Do 1st Scan → Wait 1 hour → Deliver vehicle → Do 2nd Scan → Delivery complete."
     },
     {
       "q": "Where to see payments?",
-      "a": "Reports → Payments → 'Statement view' for settlements, 'All statements' for history, 'Transaction view' for per-order fees/credits. Download reports for reconciliation."
+      "a": "Payments: Reports → Payments → 'Statement view' for settlements, 'All statements' for history, 'Transaction view' for per-order fees/credits. Download reports for reconciliation."
     },
     {
-      "q": "Cancellation Charges",
-      "a": ""
+      "q": "What are Cancellation Charges if orders are cancelled/ Not delivered?",
+      "a": "1. Failure to accept order before ship date → auto-cancel → Up to 150% of Selling on Amazon fee.\n2. Dealer/Brand Cancelling order without buyer communication → Up to 150% of Selling on Amazon fee.\n3. Late delivery (after Expected Date of Delivery) → Entire product price (risk of A-to-Z claim refund)."
     },
     {
       "q": "Buyer Seller Messages",
-      "a": "Performance → Customer Messages (or Messages icon). Reply within SLA, avoid sharing restricted contact info, attach docs/screenshots if needed."
+      "a": "Buyer–Seller Messages: Performance → Customer Messages (or Messages icon). Reply within SLA 48 hours, avoid restricted info, attach docs/screenshots if needed."
     },
     {
       "q": "Shipping template configuration",
-      "a": "Settings → Shipping → Create/Edit template. Set service levels, regions/pincodes, handling time, and fees (if applicable). Assign SKUs via 'Manage Inventory' → 'Edit' offer → choose template."
+      "a": "Shipping Template: Settings → Shipping → Create/Edit template. Set service levels, regions/pincodes, handling time. Assign SKUs via 'Manage Inventory' → 'Edit' offer → choose template."
     },
     {
       "q": "How to check notifications?",
-      "a": "Settings → Notification Preferences. Enable email/SMS/app alerts for orders, returns, performance. In-app: Bell icon on top right"
+      "a": "Notifications: Settings → Notification Preferences. Enable email/SMS/app alerts for orders, returns, performance. In-app: Bell icon (top right)."
     },
     {
-      "q": "Payment policy & terms",
-      "a": ""
-    },
-    {
-      "q": "Escalation Matrix",
-      "a": ""
-    },
-    {
-      "q": "How to check amazon orders",
-      "a": ""
+      "q": "Payment Policy & terms",
+      "a": "All Dealers receive payment within 3+1 days from delivery date (only if SOPs are followed)."
     },
     {
       "q": "Amazon Fee",
-      "a": ""
+      "a": "Amazon Fees: 2% (of Ex-Showroom Price) + 100 INR for Bikes & Scooters."
     }
   ]
 }
