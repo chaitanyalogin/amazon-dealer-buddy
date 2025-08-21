@@ -7,34 +7,40 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Topbar -->
   <header class="topbar">
     <div class="brand">
-      <!-- Put your final logo file at project root with this name -->
-      <img class="logo" src="amazon-logo.svg" alt="Amazon logo" />
+      <img class="logo" src="amazon-logo.png" alt="Amazon logo" />
       <div class="titles">
         <h1>Amazon Dealer Helpdesk</h1>
-        <p class="subtitle">Quick answers to dealer FAQs</p>
+        <p>Quick answers from your playbook</p>
       </div>
     </div>
   </header>
 
-  <main class="wrap">
-    <aside class="sidebar">
+  <!-- Main (page never scrolls; only panels do) -->
+  <main class="screen">
+    <!-- Left: Quick actions (scrollable) -->
+    <aside class="panel panel-left">
       <h3>Quick actions</h3>
-      <div id="chips" class="chips"></div>
+      <div id="actions" class="actions-list" aria-label="Questions"></div>
     </aside>
 
-    <section class="answer">
-      <div id="answerBox" class="card">
-        <div class="placeholder">Select a question to view the answer.</div>
+    <!-- Right: Answer viewer (fixed in page, own overflow when needed) -->
+    <section class="panel panel-right">
+      <div id="answer" class="answer">
+        <div class="placeholder">
+          <strong>Pick a question</strong><br>
+          The answer will appear here.
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footnote">
-    <small>Content compiled from dealer docs. © Amazon (references for educational use)</small>
-  </footer>
-
+  <script>
+    // Data file (edit only qa.json later)
+    window.DATA_URLS = { qa: "qa.json" };
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
