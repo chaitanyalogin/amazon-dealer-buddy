@@ -30,9 +30,9 @@ function showAnswer(item) {
   bodyEl.innerHTML = '';
   bodyEl.appendChild(typingDots());
 
-  setTimeout(()=>{
+  setTimeout(() => {
     bodyEl.textContent = item.a || '—';
-    bodyEl.scrollTop = 0;
+    bodyEl.scrollTop = 0; // ensure answer starts at top
   }, 350);
 }
 
@@ -43,13 +43,14 @@ function renderList(faqs) {
     btn.className = 'qa-btn';
     btn.textContent = item.q;
     btn.addEventListener('click', () => {
-      [...listEl.querySelectorAll('.qa-btn.active')].forEach(b=>b.classList.remove('active'));
+      [...listEl.querySelectorAll('.qa-btn.active')].forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showAnswer(item);
     });
     listEl.appendChild(btn);
 
-    if(idx===0) {
+    // open first by default
+    if (idx === 0) {
       btn.classList.add('active');
       showAnswer(item);
     }
