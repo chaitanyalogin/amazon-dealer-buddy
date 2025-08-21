@@ -1,30 +1,47 @@
-// Example questions (replace with your own)
-const questions = [
-  { q: "How to reset my password?", a: "Go to settings > account > reset password." },
-  { q: "How to contact support?", a: "You can email support@example.com or call 1800-123-456." },
-  { q: "Where to track my order?", a: "Visit your orders page and click on 'Track order'." }
-];
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Amazon Dealer Helpdesk</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Fix for mobile view */
+    .answer-body {
+      overflow-y: auto;   /* scroll if long */
+      word-wrap: break-word; /* break long words */
+      padding-bottom: 1rem; /* space so last line is visible */
+      max-height: 80vh; /* keep it within screen */
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand">
+      <img class="logo" src="amazon-logo.png" alt="Amazon logo" />
+      <div class="titles">
+        <h1>Amazon Dealer Helpdesk</h1>
+        <p>Quick answers from your playbook</p>
+      </div>
+    </div>
+  </header>
 
-const qaList = document.getElementById("qaList");
-const answerTitle = document.getElementById("answerTitle");
-const answerBody = document.getElementById("answerBody");
+  <!-- App layout -->
+  <main class="app">
+    <!-- Left: Quick actions (scrolls inside) -->
+    <aside class="panel">
+      <h3>Quick actions</h3>
+      <div id="qaList" class="qa-list"></div>
+    </aside>
 
-// Render the list of questions
-questions.forEach((item, index) => {
-  const div = document.createElement("div");
-  div.className = "qa-item";
-  div.textContent = item.q;
-  div.addEventListener("click", () => showAnswer(index));
-  qaList.appendChild(div);
-});
+    <!-- Right: Answer (scrolls inside) -->
+    <section class="panel answer">
+      <h2 id="answerTitle">Select a question to view the answer.</h2>
+      <div id="answerBody" class="answer-body"></div>
+    </section>
+  </main>
 
-// Function to show an answer
-function showAnswer(index) {
-  answerTitle.textContent = questions[index].q;
-  answerBody.textContent = questions[index].a;
-}
-
-// 🔑 IMPORTANT FIX: Do NOT auto-select first question
-// Leave answer area blank until user clicks
-answerTitle.textContent = "Select a question to view the answer.";
-answerBody.textContent = "";
+  <script src="app.js"></script>
+</body>
+</html>
