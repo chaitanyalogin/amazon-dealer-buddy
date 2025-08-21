@@ -7,39 +7,32 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Topbar -->
+  <!-- ===== Topbar ===== -->
   <header class="topbar">
     <div class="brand">
-      <!-- Make sure the file in your repo is named exactly: amazon-logo.png -->
       <img class="logo" src="amazon-logo.png" alt="Amazon logo" />
       <div class="titles">
         <h1>Amazon Dealer Helpdesk</h1>
-        <p>Quick answers to dealer FAQs</p>
+        <p>Quick answers from your playbook</p>
       </div>
     </div>
   </header>
 
-  <!-- Main screen: page never scrolls; panels do -->
-  <main class="screen">
-    <aside class="panel panel-left">
+  <!-- ===== App layout (fills the screen; only inner panels scroll) ===== -->
+  <main class="app">
+    <!-- Left: Quick actions (scrollable inside card) -->
+    <aside class="panel">
       <h3>Quick actions</h3>
-      <div id="actions" class="actions-list" aria-label="Questions"></div>
+      <div id="qaList" class="qa-list"></div>
     </aside>
 
-    <section class="panel panel-right">
-      <div id="answer" class="answer">
-        <div class="placeholder">
-          <strong>Select a question</strong><br>
-          The answer will appear here.
-        </div>
-      </div>
+    <!-- Right: Answer (always visible; own scroll if needed) -->
+    <section class="panel answer">
+      <h2 id="answerTitle">Select a question to view the answer.</h2>
+      <div id="answerBody" class="answer-body"></div>
     </section>
   </main>
 
-  <script>
-    // data file (you only edit qa.json later)
-    window.DATA_URLS = { qa: "qa.json" };
-  </script>
   <script src="app.js"></script>
 </body>
 </html>
