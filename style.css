@@ -1,114 +1,69 @@
 :root{
   --bg:#ffffff;
-  --ink:#111418;
-  --muted:#5b6570;
-
-  --panel:#ffffff;              /* white panels again */
-  --panel-border:#e6e7e9;
-
-  --brand:#ff9900;              /* Amazon orange */
-  --brand-d:#e07f00;
-  --brand-ink:#ffffff;
-
-  --radius:14px;
-  --header-h:64px;
+  --text:#111418;          /* body text */
+  --muted:#6b7280;
+  --brand:#232f3e;         /* Amazon dark blue/black */
+  --accent:#ff9900;        /* Amazon orange */
+  --accent-press:#e68a00;
+  --border:#e5e7eb;
+  --card:#ffffff;
 }
 
-/* ===== Base & no-page-scroll ===== */
 *{box-sizing:border-box}
 html,body{height:100%}
-html,body{margin:0}
 body{
-  background:var(--bg); color:var(--ink);
-  font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans";
-  overflow:hidden;                     /* ❌ page never scrolls */
-}
-@supports (-webkit-touch-callout: none) {
-  body{ height:100svh; }
+  margin:0; background:var(--bg); color:var(--text);
+  font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans";
 }
 
-/* ===== Topbar (unchanged look) ===== */
+/* Topbar */
 .topbar{
-  height:var(--header-h);
-  display:flex; align-items:center; gap:12px;
-  padding:0 16px;
-  border-bottom:1px solid var(--panel-border);
-  position:sticky; top:0; background:var(--bg); z-index:10;
+  position:sticky; top:0; z-index:10;
+  display:flex; align-items:center;
+  padding:.9rem 1rem; border-bottom:1px solid var(--border);
+  background:var(--bg);
 }
-.brand{display:flex; align-items:center; gap:12px; min-width:0}
-.logo{ height:28px; width:auto; object-fit:contain } /* amazon-logo.png */
-.titles h1{margin:0; font-size:1.1rem; font-weight:700}
-.titles p{margin:0; color:var(--muted); font-size:.9rem}
+.brand{display:flex; align-items:center; gap:.8rem}
+.logo{height:28px; width:auto}
+.titles h1{margin:0; font-size:1.25rem; color:var(--brand); letter-spacing:.2px}
+.subtitle{margin:.15rem 0 0; color:var(--muted); font-size:.9rem}
 
-/* ===== Screen layout fills viewport below header ===== */
-.screen{
-  height:calc(100svh - var(--header-h));
-  display:grid; gap:14px;
-  grid-template-columns: 340px 1fr;   /* desktop: left list + right answer */
-  padding:14px;
-  min-height:0;
+/* Layout */
+.wrap{
+  display:grid; grid-template-columns:320px 1fr; gap:1rem;
+  padding:1rem; max-width:1100px; margin:0 auto;
 }
+.sidebar h3{margin:.2rem 0 .8rem; color:var(--brand); font-size:1rem}
+.chips{display:flex; flex-direction:column; gap:.6rem}
 
-/* ===== Panels (white cards with light border) ===== */
-.panel{
-  background:var(--panel);
-  border:1px solid var(--panel-border);
-  border-radius:var(--radius);
-  padding:12px;
-  min-height:0;
+/* Quick action buttons */
+.chip{
+  appearance:none; border:0; cursor:pointer;
+  background:var(--accent); color:#fff; font-weight:600;
+  padding:.7rem .9rem; border-radius:10px; text-align:left;
+  box-shadow:0 1px 0 rgba(0,0,0,.05);
 }
-.panel h3{margin:6px 6px 10px; font-size:1rem}
+.chip:active{background:var(--accent-press)}
 
-/* ✅ Quick actions list — the ONLY thing that scrolls */
-.actions-list{
-  height:100%;
-  overflow:auto;                       /* scroll inside box */
-  padding:6px;
-  display:flex; flex-direction:column; gap:10px;
+/* Answer panel */
+.card{
+  background:var(--card); border:1px solid var(--border);
+  border-radius:14px; padding:1rem; min-height:220px;
 }
-
-/* Amazon-style pills */
-.action{
-  display:block; width:100%;
-  background:var(--brand); color:var(--brand-ink);
-  border:none; border-radius:999px;
-  padding:.75rem 1rem; text-align:left;
-  font-weight:700; cursor:pointer;
-}
-.action:hover{ background:var(--brand-d) }
-.action:focus{ outline:3px solid #e7f0fa; box-shadow:0 0 0 3px #e7f0fa }
-
-/* ✅ Answer panel now WHITE again */
-.answer{
-  height:100%;
-  overflow:auto;                       /* only if the answer itself is long */
-  background:#ffffff; color:var(--ink);
-  border-radius:var(--radius);
-  padding:16px 18px;
-  border:1px solid var(--panel-border);
-}
-.answer h4{margin:0 0 .5rem 0; font-size:1.05rem}
-.answer .text{white-space:pre-wrap; line-height:1.55}
 .placeholder{color:var(--muted)}
+.answer h2{margin:.2rem 0 .6rem; font-size:1.05rem; color:var(--brand)}
+.answer p, .answer li{line-height:1.55}
 
-/* Typing animation */
-.typing{display:flex; gap:6px; align-items:center; height:24px}
-.dot{width:6px; height:6px; border-radius:50%; background:#9fb3c8; opacity:.35; animation:blink 1.2s infinite}
+/* Thinking animation (3 dots) */
+.typing{display:inline-flex; gap:.25rem; align-items:center}
+.dot{width:.38rem; height:.38rem; border-radius:50%; background:#999; opacity:.35; animation:blink 1.2s infinite}
 .dot:nth-child(2){animation-delay:.15s}
 .dot:nth-child(3){animation-delay:.3s}
 @keyframes blink{0%,60%,100%{opacity:.35}30%{opacity:1}}
 
-/* ===== Mobile: split screen (top = questions scroll, bottom = fixed answer) ===== */
-@media (max-width:760px){
-  .logo{ height:24px }
-  .titles h1{ font-size:1rem }
-  .titles p{ font-size:.8rem }
-
-  .screen{
-    grid-template-columns: 1fr;
-    grid-template-rows: 48% 52%;       /* top list / bottom answer */
-  }
-
-  .panel{ padding:10px }
-  .actions-list{ padding:6px }         /* questions scroll only here */
+/* Mobile */
+@media (max-width:800px){
+  .wrap{grid-template-columns:1fr; gap:.8rem}
+  .logo{height:24px}
+  .chip{padding:.65rem .8rem}
 }
