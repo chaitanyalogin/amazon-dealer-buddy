@@ -2,23 +2,23 @@
   "faqs": [
     {
       "q": "How to get registered on Amazon?",
-      "a": "Registration: Go to sellercentral.amazon.in → 'Sign up'....gs.\nOr\nUse this link and get registered – registration link"
+      "a": "Go to sellercentral.amazon.in → 'Sign up'. Keep PAN, GSTIN, bank acct, phone/email, pickup address, and brand docs ready. Complete business details, tax info, deposit method, and verify OTP. After approval, add products and shipping settings. Or Use this link and get registered – registration link"
     },
     {
       "q": "How to raise seller support case?",
-      "a": "Seller Support Case: Seller Central → Help (top right) →...he issue, attach screenshots, submit. Track under 'Case log'."
+      "a": "Seller Central → Help (top right) → 'Get support' → Selling on Amazon → pick topic → 'Contact us'. Choose email/chat/call, describe the issue, attach screenshots, submit. Track under 'Case log'."
     },
     {
       "q": "How to login?",
-      "a": "Login: Visit sellercentral.amazon.in → Sign in with your...se 'Forgot password' and ensure the correct marketplace (IN)."
+      "a": "Visit sellercentral.amazon.in → Sign in with your registered email/phone and password. If SSO/2FA enabled, enter OTP. Trouble? Use 'Forgot password' and ensure the correct marketplace (IN)."
     },
     {
       "q": "How to update inventory & Pricing?",
-      "a": "Inventory & Pricing: Inventory → Manage All Inventory → ...tion for getting inventory and pricing updates automatically."
+      "a": "Inventory → Manage All Inventory → search SKU → 'Edit' → 'Offer' tab. Update 'Your price' and 'Quantity' then Save. For bulk: Inventory → Add Products via Upload → Price/Inventory file → upload, or use API – integration for getting inventory and pricing updates automatically."
     },
     {
       "q": "How to check orders?",
-      "a": "Orders: Orders → Manage Orders → 'Pending/Unshipped/Canc...ew details, print invoice/packing slip, and confirm dispatch."
+      "a": "Orders → Manage Orders → 'Pending/Unshipped/Cancelled'. Click an order ID to view details, print invoice/packing slip, and confirm dispatch."
     },
     {
       "q": "How to deliver vehicle to customer?",
@@ -30,7 +30,7 @@
     },
     {
       "q": "Where to see payments?",
-      "a": "Payments: Reports → Payments → 'Statement view' for sett... per-order fees/credits. Download reports for reconciliation."
+      "a": "Reports → Payments → 'Statement view' for settlements, 'All statements' for history, 'Transaction view' for per-order fees/credits. Download reports for reconciliation."
     },
     {
       "q": "Cancellation Charges",
@@ -38,15 +38,15 @@
     },
     {
       "q": "Buyer Seller Messages",
-      "a": "Buyer–Seller Messages: Performance → Customer Messages (...g restricted contact info, attach docs/screenshots if needed."
+      "a": "Performance → Customer Messages (or Messages icon). Reply within SLA, avoid sharing restricted contact info, attach docs/screenshots if needed."
     },
     {
       "q": "Shipping template configuration",
-      "a": "Shipping Template: Settings → Shipping → Create/Edit tem...SKUs via 'Manage Inventory' → 'Edit' offer → choose template."
+      "a": "Settings → Shipping → Create/Edit template. Set service levels, regions/pincodes, handling time, and fees (if applicable). Assign SKUs via 'Manage Inventory' → 'Edit' offer → choose template."
     },
     {
       "q": "How to check notifications?",
-      "a": "Notifications: Settings → Notification Preferences. Enab...orders, returns, performance. In-app: Bell icon on top right."
+      "a": "Settings → Notification Preferences. Enable email/SMS/app alerts for orders, returns, performance. In-app: Bell icon on top right"
     },
     {
       "q": "Payment policy & terms",
