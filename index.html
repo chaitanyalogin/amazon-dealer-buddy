@@ -10,27 +10,26 @@
   <!-- Topbar -->
   <header class="topbar">
     <div class="brand">
+      <!-- Make sure the file in your repo is named exactly: amazon-logo.png -->
       <img class="logo" src="amazon-logo.png" alt="Amazon logo" />
       <div class="titles">
         <h1>Amazon Dealer Helpdesk</h1>
-        <p>Quick answers from your playbook</p>
+        <p>Quick answers to dealer FAQs</p>
       </div>
     </div>
   </header>
 
-  <!-- Main (page never scrolls; only panels do) -->
+  <!-- Main screen: page never scrolls; panels do -->
   <main class="screen">
-    <!-- Left: Quick actions (scrollable) -->
     <aside class="panel panel-left">
       <h3>Quick actions</h3>
       <div id="actions" class="actions-list" aria-label="Questions"></div>
     </aside>
 
-    <!-- Right: Answer viewer (fixed in page, own overflow when needed) -->
     <section class="panel panel-right">
       <div id="answer" class="answer">
         <div class="placeholder">
-          <strong>Pick a question</strong><br>
+          <strong>Select a question</strong><br>
           The answer will appear here.
         </div>
       </div>
@@ -38,7 +37,7 @@
   </main>
 
   <script>
-    // Data file (edit only qa.json later)
+    // data file (you only edit qa.json later)
     window.DATA_URLS = { qa: "qa.json" };
   </script>
   <script src="app.js"></script>
