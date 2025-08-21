@@ -1,101 +1,66 @@
-/* ===== Base (white theme) ===== */
-:root{
-  --bg:#ffffff;
-  --ink:#111418;
-  --muted:#5f6b7a;
-  --border:#e5e7eb;
-  --pill:#ff9900;
-  --pill-hi:#f59e0b;
-  --card:#ffffff;
-  --shadow:0 10px 25px rgba(0,0,0,.06);
-  --tbH:64px;        /* topbar height used on mobile calc */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TatTvam Chatbot</title>
+  <style>
+    :root {
+      --pill: #ff9900;
+    }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0; background:var(--bg); color:var(--ink);
-  font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans";
-  min-height:100svh; display:flex; flex-direction:column; overflow:hidden; /* page never scrolls */
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
 
-/* ===== Topbar ===== */
-.topbar{
-  height:var(--tbH);
-  display:flex; align-items:center; gap:1rem;
-  padding:.8rem 1rem; border-bottom:1px solid var(--border);
-  background:#fff; flex:0 0 auto;
-}
-.brand{display:flex; align-items:center; gap:.8rem; min-width:0}
-.logo{height:26px; width:auto; object-fit:contain}
-.titles h1{margin:0; font-size:1.35rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-.titles p{margin:0; color:var(--muted); font-size:.9rem}
+    .chat-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
 
-/* ===== App layout (fills remaining height) ===== */
-.app{
-  flex:1 1 auto; min-height:0;            /* allow internal scroll areas to size */
-  display:grid; grid-template-columns:360px 1fr; gap:1rem;
-  padding:1rem; max-width:1200px; margin:0 auto;
-}
-.panel{
-  background:var(--card); border:1px solid var(--border); border-radius:16px;
-  padding:1rem; box-shadow:var(--shadow);
-  display:flex; flex-direction:column; min-height:0; /* critical for inner scroll */
-}
-.panel h3, .panel h2{margin:.2rem 0 1rem 0}
+    .message {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
 
-/* Quick actions list (only this scrolls) */
-.qa-list{
-  display:flex; flex-direction:column; gap:.7rem;
-  overflow:auto; padding-right:.25rem;
-}
+    .qa-btn {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      background: linear-gradient(180deg, var(--pill), #ea8a00);
+      color: #fff;
+      font-weight: 700;
+      text-align: left;
+      padding: .9rem 1rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 12px rgba(255,153,0,.25);
+      font-size: 1.1rem; /* ✅ Increased font size */
+      margin: 0.3rem 0;
+      width: 100%;
+      display: block;
+    }
 
-/* Orange pills */
-.qa-btn{
-  appearance:none; border:0; cursor:pointer;
-  background:linear-gradient(180deg,var(--pill),#ea8a00);
-  color:#fff; font-weight:700; text-align:left;
-  padding:.9rem 1rem; border-radius:999px;
-  box-shadow:0 4px 12px rgba(255,153,0,.25);
-}
-.qa-btn:hover{ background:linear-gradient(180deg,var(--pill-hi),#e28100) }
-.qa-btn.active{ outline:3px solid rgba(255,153,0,.35) }
-
-/* Answer area (scrolls inside) */
-.answer-body{
-  flex:1 1 auto; overflow:auto; border-radius:12px;
-  background:#fff; color:var(--ink); border:1px solid var(--border);
-  padding:1rem; white-space:pre-wrap; line-height:1.55;
-}
-
-/* Typing dots */
-.dots{display:inline-flex; gap:.25rem; align-items:center}
-.dot{width:.4rem; height:.4rem; background:#999; border-radius:50%;
-     opacity:.3; animation:blink 1.2s infinite}
-.dot:nth-child(2){animation-delay:.15s}
-.dot:nth-child(3){animation-delay:.3s}
-@keyframes blink{0%,60%,100%{opacity:.3}30%{opacity:1}}
-
-/* ===== Mobile: two rows, both fixed height, only inner scrolls ===== */
-@media (max-width:720px){
-  .topbar{padding:.5rem .8rem}
-  .logo{height:22px}
-  .titles h1{font-size:1.12rem}
-  .titles p{font-size:.82rem}
-
-  /* Fit exactly under the topbar; no page scroll */
-  .app{
-    height:calc(100svh - var(--tbH));
-    grid-template-columns:1fr;
-    grid-template-rows:46% 54%;   /* top list / bottom answer */
-    padding:.6rem; gap:.6rem;
-  }
-  .panel{padding:.75rem}
-  .answer h2{font-size:1.25rem; margin:.2rem 0 .6rem}
-}
-
-/* Subtle scrollbars (supported browsers) */
-.qa-list::-webkit-scrollbar,
-.answer-body::-webkit-scrollbar{width:10px}
-.qa-list::-webkit-scrollbar-thumb,
-.answer-body::-webkit-scrollbar-thumb{background:#d8dbe0; border-radius:8px}
+    .qa-btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="message">
+      <p>Hello 👋 I’m TatTvam, your assistant. Pick a quick action:</p>
+      <button class="qa-btn">📊 View Dashboard</button>
+      <button class="qa-btn">📈 Latest Sales Report</button>
+      <button class="qa-btn">⚙️ System Health Check</button>
+      <button class="qa-btn">❓ Help & Support</button>
+    </div>
+  </div>
+</body>
+</html>
