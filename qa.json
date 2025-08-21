@@ -2,31 +2,31 @@
   "faqs": [
     {
       "q": "How to get registered on Amazon?",
-      "a": "Please register yourself by clicking <a href='https://sellercentral.amazon.in'>here</a> → 'Sign up'. Keep PAN, GSTIN, bank acct, phone/email, pickup address, and brand docs ready. Complete business details, tax info, deposit method, and verify OTP. After approval, add products and shipping settings."
+      "a": "Please register yourself by clicking here  -> 'Sign up'. Keep PAN, GSTIN, bank acct, phone/email, pickup address, and brand docs ready. Complete business details, tax info, deposit method, and verify OTP. After approval, add products and shipping settings"
     },
     {
       "q": "How to raise seller support case?",
-      "a": "Seller Support Case: Login to your <a href='https://sellercentral.amazon.in'>Seller Central Account</a> → check for “Help” (top right) → 'Get support' → Selling on Amazon → pick topic → 'Contact us'. Choose email/chat/call, describe the issue, attach screenshots, submit. Track under 'Case log'."
+      "a": "Seller Support Case: Login to your Seller Central Account → check for “Help” (top right) → 'Get support' → Selling on Amazon → pick topic → 'Contact us'. Choose email/chat/call, describe the issue, attach screenshots, submit. Track under 'Case log'."
     },
     {
       "q": "How to login?",
-      "a": "Login: Visit <a href='https://sellercentral.amazon.in'>sellercentral.amazon.in</a> → Sign in with your registered email/phone and password. If 2 Step verification is enabled, keep your phone handy for OTP. Enter OTP & Login. Trouble? Use 'Forgot password' and ensure the correct marketplace (IN)."
+      "a": "Login: Visit sellercentral.amazon.in → Sign in with your registered email/phone and password. If 2 Step verification is  enabled, Keep you phone handy for getting OTP. Enter OTP & Login\n\nTrouble? Use 'Forgot password' and ensure the correct marketplace (IN)."
     },
     {
       "q": "How to update inventory & Pricing?",
-      "a": "1. Inventory → Manage All Inventory → search SKU → 'Edit' → 'Offer' tab. Update 'Your price' and 'Quantity' then Save. \n2. For bulk: Inventory → Add Products via Upload → Price/Inventory file → upload, or use API – integration for getting inventory and pricing updates automatically."
+      "a": "1.\tInventory → Manage All Inventory → search SKU → 'Edit' → 'Offer' tab. Update 'Your price' and 'Quantity' then Save. For bulk: Inventory → Add Products via Upload → \n\n2.\tPrice/Inventory file → upload, or use API – integration for getting inventory and pricing updates automatically."
     },
     {
       "q": "How to check orders?",
-      "a": "Login into your <a href='https://sellercentral.amazon.in'>Seller Central account</a> → Menu (Top Left) → Orders → Manage Orders → 'Pending/Unshipped/Cancelled'. Click an order ID to view details, contact customer and share KYC/Insurance & RTO docs. After collecting docs and RTO/Insurance charges, click Self Deliver → Print invoice/packing slip."
+      "a": "Login into your seller central account – Click on Menu (Top Left) → Orders → Manage Orders → 'Pending/Unshipped/Cancelled'. \n\nClick an order ID to view details, Contact Customer and share documents to be kept ready for completing  KYC/Insurance & RTO. Once documents are collected and RTO/Insurance charges are collected, Click on Self Deliver - Print invoice/packing slip."
     },
     {
       "q": "Which app need to be downloaded for scanning?",
-      "a": "For Android: <a href='https://play.google.com/store'>Amazon Track App</a>. \nFor iPhone: <a href='https://apps.apple.com/'>Amazon Track App</a>. \n\nWhy important? \n• Provides tracking info to customers → better feedback. \n• Enables sellers to maintain delivery performance for Local Shops & Prime. \n\nPre-requisites:\n• Seller account on Seller Central\n• Delivery agent with Android ≥7.0 and IN phone number\n• Opted into Self-Delivery workflow\n• Configured 'Ships-from Location' in Buy Shipping preferences → Settings > Account Info > Buy Shipping Preferences.\n\nHow to update deliveries:\n1. Out for Delivery scan\n2. Delivered / Attempt / Rejected scan (before 10PM same day)."
+      "a": "For Android Users – Go to Play store – Search for “AMAZON TRACK APP”\n\nFor Iphone Users – Go to App Store - “AMAZON TRACK APP”\n\nWhy is using the Amazon Track App important?\n\nIt is extremely important to use this App for Self-Delivery orders because, it helps –\n\n• Amazon to provide tracking information to customers, leading to possible better customer feedback on Amazon.in\n• Enables sellers to track and work on maintaining their delivery performance to continue on Local Shops and Prime programs.\n\nWhat are the pre-requisites to use the Amazon Track App?\n\nThe pre-requisites to use the App are -\n• You (seller) have a selling account on Amazon Seller Central,\n• Your DA has an Android device (version 7.0 or above) and an IN registered phone number\n• You (seller) have opted in for the Self-Delivery workflow on Amazon.in\n• You (seller) have configured your 'Ships-from Location' in Buy Shipping preferences\nLog into 'Amazon Seller Central' and go to Settings > Account Info > Buy Shipping Preferences. Click on 'Add New Address' button to save your business address.\n\nHow do I update deliveries on the App?\n\nThere are two scans that need to be marked for deliveries on the Amazon Track App –\n1. Out for Delivery\n2. Delivered / Delivery Attempt / Rejected\n\nBoth these actions have to be completed on the same day (i.e., before 10PM) to be counted as a successful workflow in the delivery metrics."
     },
     {
       "q": "How to deliver vehicle to customer?",
-      "a": "Login into Seller Central → Orders → Click Order ID → Collect KYC/RTO docs and charges for RTO/Insurance → Click Self Delivery → Enter dimensions → Print Packaging slip → Do 1st Scan → Wait 1 hour → Deliver vehicle → Do 2nd Scan → Delivery complete."
+      "a": "Login into Seller central – Goto Orders – Click on Order ID – Collect KYC/RTO documents and collect charges for RTO/Insurance – Click on Self delivery – Enter dimensions – Print Packaging slip – Do 1st Scan – wait for 1 hour – Delivery the vehicle – do the 2nd scan- delivery is complete"
     },
     {
       "q": "Where to see payments?",
@@ -34,11 +34,11 @@
     },
     {
       "q": "What are Cancellation Charges if orders are cancelled/ Not delivered?",
-      "a": "1. Failure to accept order before ship date → auto-cancel → Up to 150% of Selling on Amazon fee.\n2. Dealer/Brand Cancelling order without buyer communication → Up to 150% of Selling on Amazon fee.\n3. Late delivery (after Expected Date of Delivery) → Entire product price (risk of A-to-Z claim refund)."
+      "a": "1.\tFailure to accept order before ship date, leading to auto-cancellation - Up to 150% of Selling on Amazon fee\n2.\tDealer/Brand Cancelling order without buyer communication - Up to 150% of Selling on Amazon fee\n3.\tLate delivery (after Expected Date of Delivery) - Entire product price (risk of A-to-Z claim refund)"
     },
     {
       "q": "Buyer Seller Messages",
-      "a": "Buyer–Seller Messages: Performance → Customer Messages (or Messages icon). Reply within SLA 48 hours, avoid restricted info, attach docs/screenshots if needed."
+      "a": "Buyer–Seller Messages: Performance → Customer Messages (or Messages icon). Reply within SLA 48 hours, avoid sharing restricted contact info, attach docs/screenshots if needed."
     },
     {
       "q": "Shipping template configuration",
@@ -46,15 +46,15 @@
     },
     {
       "q": "How to check notifications?",
-      "a": "Notifications: Settings → Notification Preferences. Enable email/SMS/app alerts for orders, returns, performance. In-app: Bell icon (top right)."
+      "a": "Notifications: Settings → Notification Preferences. Enable email/SMS/app alerts for orders, returns, performance. In-app: Bell icon on top right."
     },
     {
       "q": "Payment Policy & terms",
-      "a": "All Dealers receive payment within 3+1 days from delivery date (only if SOPs are followed)."
+      "a": "All Dealers will be getting payment within 3+1 days from delivery date. (Only if all the delivery SOPs are followed)"
     },
     {
       "q": "Amazon Fee",
-      "a": "Amazon Fees: 2% (of Ex-Showroom Price) + 100 INR for Bikes & Scooters."
+      "a": "Amazon Fees: 2% (of Ex-Showroom Price)+100 INR for Bikes & Scooters"
     }
   ]
 }
