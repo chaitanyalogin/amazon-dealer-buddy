@@ -1,66 +1,68 @@
-[
-  {
-    "q": "How to get registered on Amazon?",
-    "a": "Registration: Go to sellercentral.amazon.in → 'Sign up'....ings. Or Use this link and get registered – registration link"
-  },
-  {
-    "q": "How to raise seller support case?",
-    "a": "Seller Support Case: Seller Central → Help (top right) →...he issue, attach screenshots, submit. Track under 'Case log'."
-  },
-  {
-    "q": "How to login?",
-    "a": "Login: Visit sellercentral.amazon.in → Sign in with your...se 'Forgot password' and ensure the correct marketplace (IN)."
-  },
-  {
-    "q": "How to update inventory & Pricing?",
-    "a": "Inventory & Pricing: Inventory → Manage All Inventory → ...tion for getting inventory and pricing updates automatically."
-  },
-  {
-    "q": "How to check orders?",
-    "a": "Orders: Orders → Manage Orders → 'Pending/Unshipped/Canc...ew details, print invoice/packing slip, and confirm dispatch."
-  },
-  {
-    "q": "How to deliver vehicle to customer?",
-    "a": ""
-  },
-  {
-    "q": "Which app need to be downloaded for scanning?",
-    "a": ""
-  },
-  {
-    "q": "Where to see payments?",
-    "a": "Payments: Reports → Payments → 'Statement view' for sett... per-order fees/credits. Download reports for reconciliation."
-  },
-  {
-    "q": "Cancellation Charges",
-    "a": ""
-  },
-  {
-    "q": "Buyer Seller Messages",
-    "a": "Buyer–Seller Messages: Performance → Customer Messages (...g restricted contact info, attach docs/screenshots if needed."
-  },
-  {
-    "q": "Shipping template configuration",
-    "a": "Shipping Template: Settings → Shipping → Create/Edit tem...SKUs via 'Manage Inventory' → 'Edit' offer → choose template."
-  },
-  {
-    "q": "How to check notifications?",
-    "a": "Notifications: Settings → Notification Preferences. Enab...orders, returns, performance. In-app: Bell icon on top right."
-  },
-  {
-    "q": "Payment policy & terms",
-    "a": ""
-  },
-  {
-    "q": "Escalation Matrix",
-    "a": ""
-  },
-  {
-    "q": "How to check amazon orders",
-    "a": ""
-  },
-  {
-    "q": "Amazon Fee",
-    "a": ""
-  }
-]
+{
+  "faqs": [
+    {
+      "q": "How to get registered on Amazon?",
+      "a": "Registration: Go to sellercentral.amazon.in → 'Sign up'....gs.\nOr\nUse this link and get registered – registration link"
+    },
+    {
+      "q": "How to raise seller support case?",
+      "a": "Seller Support Case: Seller Central → Help (top right) →...he issue, attach screenshots, submit. Track under 'Case log'."
+    },
+    {
+      "q": "How to login?",
+      "a": "Login: Visit sellercentral.amazon.in → Sign in with your...se 'Forgot password' and ensure the correct marketplace (IN)."
+    },
+    {
+      "q": "How to update inventory & Pricing?",
+      "a": "Inventory & Pricing: Inventory → Manage All Inventory → ...tion for getting inventory and pricing updates automatically."
+    },
+    {
+      "q": "How to check orders?",
+      "a": "Orders: Orders → Manage Orders → 'Pending/Unshipped/Canc...ew details, print invoice/packing slip, and confirm dispatch."
+    },
+    {
+      "q": "How to deliver vehicle to customer?",
+      "a": ""
+    },
+    {
+      "q": "Which app need to be downloaded for scanning?",
+      "a": ""
+    },
+    {
+      "q": "Where to see payments?",
+      "a": "Payments: Reports → Payments → 'Statement view' for sett... per-order fees/credits. Download reports for reconciliation."
+    },
+    {
+      "q": "Cancellation Charges",
+      "a": ""
+    },
+    {
+      "q": "Buyer Seller Messages",
+      "a": "Buyer–Seller Messages: Performance → Customer Messages (...g restricted contact info, attach docs/screenshots if needed."
+    },
+    {
+      "q": "Shipping template configuration",
+      "a": "Shipping Template: Settings → Shipping → Create/Edit tem...SKUs via 'Manage Inventory' → 'Edit' offer → choose template."
+    },
+    {
+      "q": "How to check notifications?",
+      "a": "Notifications: Settings → Notification Preferences. Enab...orders, returns, performance. In-app: Bell icon on top right."
+    },
+    {
+      "q": "Payment policy & terms",
+      "a": ""
+    },
+    {
+      "q": "Escalation Matrix",
+      "a": ""
+    },
+    {
+      "q": "How to check amazon orders",
+      "a": ""
+    },
+    {
+      "q": "Amazon Fee",
+      "a": ""
+    }
+  ]
+}
