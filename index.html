@@ -13,6 +13,12 @@
       padding-bottom: 1rem; /* space so last line is visible */
       max-height: 80vh; /* keep it within screen */
     }
+
+    .dropdown {
+      margin: 1rem 0;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -38,6 +44,15 @@
     <!-- Right: Answer (scrolls inside) -->
     <section class="panel answer">
       <h2 id="answerTitle">Select a question to view the answer.</h2>
+
+      <!-- Dropdown added here -->
+      <select id="questionSelect" class="dropdown">
+        <option value="" selected disabled hidden>-- Select a question --</option>
+        <option value="q1">Question 1</option>
+        <option value="q2">Question 2</option>
+        <option value="q3">Question 3</option>
+      </select>
+
       <div id="answerBody" class="answer-body"></div>
     </section>
   </main>
